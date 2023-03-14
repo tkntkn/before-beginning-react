@@ -5,4 +5,4 @@ const server = http.createServer((request, response) => {
   response.write('こんにちは。').end();
 });
 
-server.listen('80', localhost);
+server.listen('80', 'localhost');
