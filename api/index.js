@@ -5,9 +5,15 @@ const server = http.createServer((request, response) => {
   
   response.write(`
     <script type="module">
+      document.body.color = "blue";
+      document.body.backgroundColor = "lime";
+      document.body.fontSize = "50px"
+      document.body.padding = "30px";
+
       setInterval(() => {
         document.body.textContent = new Date().toLocaleString();
       }, 1000);
+
     </script>
   `);
 
