@@ -5,7 +5,14 @@ const server = http.createServer((request, response) => {
   messages.push(request.url);
   
   response.setHeader('Content-Type', 'text/html; charset=UTF-8');
-  response.write(messages.join(" "));
+  
+  let text = "";
+  for (const messgae of messages) {
+    text += decodeURIComponent(message);
+    text += "<br>";
+  }
+  
+  response.write(text);
   response.end();
 })
 
