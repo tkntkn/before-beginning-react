@@ -6,14 +6,20 @@ const server = http.createServer((request, response) => {
   response.write(`
     <script type="module">
       document.body.style.color = "blue";
-      document.body.style.backgroundColor = "lime";
+      document.body.style.backgroundColor = "skyblue";
       document.body.style.fontSize = "50px"
       document.body.style.padding = "30px";
+      
+      const node1 = document.createTextNode("こんにちは！");
+      const node2 = document.createElement("div");
+      const node3 = document.createTextNode("ようこそ！");
+      node2.style.color = "red";
+      node2.style.backgroundColor = "teal"
+      node2.style.fontSize = "30px";
 
-      setInterval(() => {
-        document.body.textContent = new Date().toLocaleString();
-      }, 1000);
-
+      document.body.appendChild(node1);
+      document.body.appendChild(node2);
+      node2.appendChild(node3);
     </script>
   `);
 
