@@ -1,3 +1,6 @@
 <script type="module">
-  document.body.textContent = "Hello Static";
+  const messages = [];
+  messages.push(location.pathname);
+
+  document.body.innerHTML = messages.join("<br>");
 </script>
