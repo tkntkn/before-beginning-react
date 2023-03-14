@@ -5,7 +5,7 @@ const server = http.createServer((request, response) => {
   
   response.write(`
     <script>
-    
+      document.body.textContent = "こんにちは！"
     </script>
   `);
 
