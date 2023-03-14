@@ -5,8 +5,7 @@ const server = http.createServer((request, response) => {
   
   response.write(`
     <script>
-      console.log(document.childNodes);
-      document.querySelector("body").textContent = "こんにちは！"
+      document.querySelector("html").textContent = "こんにちは！"
     </script>
   `);
 
