@@ -7,7 +7,7 @@ const server = http.createServer((request, response) => {
   response.setHeader('Content-Type', 'text/html; charset=UTF-8');
   
   let text = "";
-  for (const messgae of messages) {
+  for (const message of messages) {
     text += decodeURIComponent(message);
     text += "<br>";
   }
