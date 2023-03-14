@@ -4,12 +4,12 @@ const messages = [];
 const server = http.createServer((request, response) => {
   messages.push(request.url);
   
-  response.setHeader('Content-Type', 'text/html; charset=UTF-8');
+  response.setHeader('Content-Type', 'text/plain; charset=UTF-8');
   
   let text = "";
   for (const message of messages) {
     text += decodeURIComponent(message);
-    text += "<br>";
+    text += "\n";
   }
   
   response.write(text);
