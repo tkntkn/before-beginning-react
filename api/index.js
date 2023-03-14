@@ -9,7 +9,7 @@ const server = http.createServer((request, response) => {
   let text = "";
   for (const message of messages) {
     if (message !== "/favicon.ico") {
-      text += decodeURIComponent(message);
+      text += decodeURIComponent(message).slice(1);
       text += "\n";
     }
   }
