@@ -5,7 +5,9 @@ const server = http.createServer((request, response) => {
   
   response.write(`
     <script type="module">
-      document.body.textContent = "module!"
+      setTimeout(() => {
+        document.body.textContent = new Date().toLocaleString();
+      }, 1000);
     </script>
   `);
 
