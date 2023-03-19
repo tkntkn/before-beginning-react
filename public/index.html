@@ -1,3 +1,21 @@
 <script type="module">
-  document.body.appendChild(document.createTextNode("Hello from pages."));
+  const textNode = document.createTextNode();
+  document.body.appendChild(textNode);
+  setInterval(() => {
+    textNode.data = `現在時刻: ${new Date().toLocaleString()}`;
+  }, 50);
+
+  document.body.style["color"] = "navy"
+  document.body.style["background-color"] = "wheat"
+
+  document.body.style["border-style"] = "dashed"
+  document.body.style["border-width"] = "5px"
+  document.body.style["border-color"] = "red"
+  document.body.style["border-radius"] = "30px"
+
+  document.body.style["margin"] = "50px"
+  document.body.style["padding"] = "10px"
+
+  document.body.style["width"] = "300px"
+  document.body.style["height"] = "300px"
 </script>
