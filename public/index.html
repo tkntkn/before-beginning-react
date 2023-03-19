@@ -1,15 +1,34 @@
 <script type="module">
-  // ～～～ミリ秒に１度この関数を実行する
-  setInterval(() => {
-    // テキストを表示する「ノード」を作る
-    const textNode = document.createTextNode(`現在時刻: ${new Date().toLocaleString()}`);
+  const elementNode = document.createElement("div");
+  const textNode = document.createTextNode("初期値");
+  document.body.appendChild(elementNode);
+  elementNode.appendChild(textNode);
 
-    if (document.body.children.length <= 5) {    
-      // ドキュメントの本体に「ノード」を追加する
-      document.body.appendChild(textNode);
-    } else {
-      // ドキュメントの本体に追加されたものを「ノード」に置き換える
-      document.body.replaceChildren(textNode)
-    }
-  }, 1000);
+  setInterval(() => {
+    textNode.data = `現在時刻: ${new Date().toLocaleString()}`;
+  }, 50);
+
+  document.body.style["color"] = "navy";
+  document.body.style["background-color"] = "wheat";
+
+  document.body.style["font-size"] = "25px";
+  document.body.style["font-family"] = "Impact";
+
+  document.body.style["border-style"] = "dashed";
+  document.body.style["border-width"] = "5px";
+  document.body.style["border-color"] = "red";
+  document.body.style["border-radius"] = "30px";
+
+  document.body.style["margin"] = "50px";
+  document.body.style["padding"] = "20px";
+
+  document.body.style["width"] = "600px";
+  document.body.style["height"] = "300px";
+
+  elementNode.style["width"] = "200px";
+  elementNode.style["left"] = "50px";
+
+  elementNode.style["border-bottom"] = "solid 1px black";
+
+  elementNode.style["text-align"] = "center";
 </script>
