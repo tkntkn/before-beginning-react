@@ -1,5 +1,5 @@
 <script type="module">
-  const textNode = document.createTextNode();
+  const textNode = document.createTextNode("初期値");
   document.body.appendChild(textNode);
   setInterval(() => {
     textNode.data = `現在時刻: ${new Date().toLocaleString()}`;
