@@ -1,0 +1,11 @@
+<script type="module">
+  setInterval(() => {
+    const textNode = document.createTextNode(`現在時刻: ${new Date().toLocaleString()}`);
+
+    if (document.body.childNodes.length <= 5) {    
+      document.body.appendChild(textNode);
+    } else {
+      document.body.replaceChildren(textNode);
+    }
+  }, 1000);
+</script>
