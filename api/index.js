@@ -1,16 +1,24 @@
 const http = require('node:http');
+const messages = [];
 
 const server = http.createServer((request, response) => {
-  response.setHeader('Content-Type', 'text/html; charset=UTF-8');
-  response.write(`
-    <script type="module">
-      const textNode = document.createTextNode("こんにちは！");
-      document.body.appendChild(textNode);
-      setInterval(() => {
-        textNode.data = new Date().toLocaleString();
-      }, 5000);
-    </script>
-  `);
+  response.setHeader('Content-Type', 'text/plain; charset=UTF-8');
+
+  if (request.url === "/favicon.ico") {
+    // 何も返さない
+  } else if (request.url === "/") {
+    response.write("メッセージを送ってください。");
+  } else {
+    messages.push(request.url);
+    
+    let text = "";
+    for (const message of messages) {
+      text += `${decodeURIComponent(message).slice(1)}\n`;
+    }
+
+    response.write(text);
+  }
+
   response.end();
 });
 
